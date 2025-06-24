@@ -11,7 +11,7 @@ def is_valid_row(row):
 
 def clean_postcode(value):
     try:
-        return str(int(float(value)))  # Convert '4802.0' → '4802'
+        return str(int(float(value))) 
     except ValueError:
         return ''
 
@@ -33,10 +33,8 @@ def parse_and_validate_csv(input_path, output_path):
                 print("Invalid row (missing required fields):", row)
                 continue
 
-            # Clean postcode
             postcode = clean_postcode(row['res_postcode'])
 
-            # Simplified address (city-level only)
             address = f"{row['res_city']}, {row['res_state']} {postcode}, Australia"
             print("Looking up address:", address)
 
