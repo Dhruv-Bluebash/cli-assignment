@@ -9,7 +9,7 @@ def get_coordinates(address, retries=3):
         try:
             location = geolocator.geocode(address, timeout=10)
             if location:
-                time.sleep(1)  # Respect rate limits
+                time.sleep(1) 
                 return (location.latitude, location.longitude)
             else:
                 return None
